@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gavira Labs | Agency Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f6f3ec;--surface:#ffffff;--ink:#14213a;--muted:#5b6578;--line:#d9d3c4;--gold:#9a7424;--navy:#14213a;--onnavy:#f6f3ec;--glow:rgba(154,116,36,.12);
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1626;--surface:#15233b;--ink:#f1ece0;--muted:#a3adc0;--line:#2a3a57;--gold:#d6ae5a;--navy:#070d18;--onnavy:#f1ece0;--glow:rgba(214,174,90,.12);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1626;--surface:#15233b;--ink:#f1ece0;--muted:#a3adc0;--line:#2a3a57;--gold:#d6ae5a;--navy:#070d18;--onnavy:#f1ece0;--glow:rgba(214,174,90,.12);color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:600;line-height:1.1;margin:0}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:20px;display:flex;align-items:center;gap:10px}
+.logo i{width:28px;height:28px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:13px;color:var(--gold)}
+.links{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;background:var(--navy);color:var(--onnavy);font-weight:600;font-size:15px;border:1px solid var(--gold);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px var(--glow)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.hero{padding:110px 0 70px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:560px;height:560px;right:-160px;top:-120px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 65%);animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-60px,50px) scale(1.15)}}
+.hero h1{font-size:clamp(40px,7vw,84px);max-width:15ch;letter-spacing:-.02em}
+.hero p{max-width:56ch;color:var(--muted);font-size:18px;margin:26px 0 34px}
+.hero .row{display:flex;gap:14px;flex-wrap:wrap}
+.hero h1,.hero p,.hero .row{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero p{animation-delay:.15s}.hero .row{animation-delay:.3s}
+@keyframes rise{to{opacity:1;transform:none}}
+.rail{border-block:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--surface)}
+.rail .track{display:flex;width:max-content;gap:56px;animation:slide 48s linear infinite;opacity:.4}
+.rail.rev .track{animation-direction:reverse;animation-duration:60s}
+.rail span{white-space:nowrap;font-family:Fraunces,Georgia,serif;font-size:19px}
+.rail span::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:14px;vertical-align:middle}
+@keyframes slide{to{transform:translateX(-50%)}}
+h2{font-size:clamp(30px,4.4vw,48px);max-width:20ch}
+.lead{color:var(--muted);max-width:60ch;margin:16px 0 44px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.stat{padding:34px 26px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font:600 clamp(36px,5vw,58px)/1 Fraunces,Georgia,serif;color:var(--gold)}
+.stat small{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.card h3{font-size:21px;margin-bottom:10px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.proj{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface);display:block}
+.thumb{aspect-ratio:16/9;position:relative;display:grid;place-items:center;color:#f6f3ec}
+.play{width:56px;height:56px;border-radius:50%;border:1.5px solid #f6f3ec;display:grid;place-items:center;transition:transform .3s,background .3s}
+.play::after{content:"";border-left:14px solid #f6f3ec;border-block:9px solid transparent;margin-left:4px}
+.proj:hover .play{transform:scale(1.12);background:rgba(255,255,255,.18)}
+.proj div.meta{padding:20px 22px}
+.proj h3{font-size:20px}
+.proj p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.person{text-align:left}
+.av{width:100%;aspect-ratio:1/1;border-radius:14px;display:grid;place-items:center;font:600 44px Fraunces,Georgia,serif;color:#f6f3ec;margin-bottom:14px}
+.person h3{font-size:19px}
+.person p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.contact{background:var(--navy);color:var(--onnavy);border-radius:24px;padding:64px 40px;margin:0 24px}
+.contact h2{max-width:18ch}
+.contact p{color:var(--onnavy);opacity:.75;max-width:50ch;margin:16px 0 30px}
+.contact .btn{background:var(--gold);color:#101828;border-color:var(--gold)}
+.contact .btn.ghost{background:transparent;color:var(--onnavy);border-color:rgba(255,255,255,.35)}
+.cl{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+footer{padding:36px 0 48px;color:var(--muted);font-size:14px;text-align:center}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.reveal.in,.no-js .reveal{opacity:1;transform:none}
+@media (max-width:760px){.links{display:none}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}section{padding:64px 0}.contact{padding:44px 24px;margin:0 16px}}
+main{position:relative;z-index:1}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.scene{position:absolute;right:-4%;top:50%;width:min(980px,115vw);transform:translateY(-50%);opacity:0;animation:scn 18s ease-in-out infinite}
+.scene:nth-child(2){animation-delay:6s}.scene:nth-child(3){animation-delay:12s}
+@keyframes scn{0%{opacity:0}8%,30%{opacity:.22}38%,100%{opacity:0}}
+.scene svg{width:100%;height:auto;display:block}
+.scene .s{stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.scene .g{fill:var(--gold)}.scene .gs{stroke:var(--gold);fill:none;stroke-width:4;stroke-linecap:round}
+.scene .pt{fill:var(--ink);opacity:.55}.scene .tx{fill:var(--bg);font:600 15px Manrope,sans-serif;text-anchor:middle}
+.clip{animation:clp 5s linear infinite}@keyframes clp{to{transform:translateX(-110px)}}
+.ph{animation:phd 7s ease-in-out infinite alternate}@keyframes phd{to{transform:translateX(300px)}}
+.bar{transform-box:fill-box;transform-origin:bottom;animation:grw 3.5s ease-in-out infinite alternate}@keyframes grw{from{transform:scaleY(.25)}to{transform:scaleY(1)}}
+.ln{stroke-dasharray:640;stroke-dashoffset:640;animation:drw 5s ease-in-out infinite alternate}@keyframes drw{to{stroke-dashoffset:0}}
+.rg{transform-box:fill-box;transform-origin:center;animation:spn 9s linear infinite}@keyframes spn{to{transform:rotate(360deg)}}
+.fl{animation:flt 7s ease-in-out infinite;opacity:0}@keyframes flt{0%{transform:translateY(50px);opacity:0}20%,75%{opacity:1}100%{transform:translateY(-70px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.scene:first-child{opacity:.18}.fl{opacity:1}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.hero h1,.hero p,.hero .row,.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+<div class="scene"><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="p1" width="110" height="26" patternUnits="userSpaceOnUse"><rect width="100" height="26" rx="5" fill="var(--gold)"/></pattern><pattern id="p2" width="110" height="26" patternUnits="userSpaceOnUse"><rect x="30" width="70" height="26" rx="5" fill="var(--ink)" opacity=".6"/></pattern><clipPath id="tl"><rect width="510" height="70"/></clipPath></defs><rect x="120" y="40" width="560" height="330" rx="14" class="s"/><path class="s" d="M360 370v40M280 410h240"/><rect x="145" y="65" width="330" height="170" rx="8" class="s"/><polygon points="285,125 285,175 330,150" class="g"/><path class="s" d="M500 80h150M500 110h110M500 140h140M500 170h90"/><g transform="translate(145,262)" clip-path="url(#tl)"><g class="clip"><rect x="0" y="0" width="760" height="26" fill="url(#p1)"/><rect x="0" y="38" width="760" height="26" fill="url(#p2)"/></g></g><g class="ph"><path class="gs" d="M200 250V335"/><polygon points="192,246 208,246 200,258" class="g"/></g><circle cx="70" cy="330" r="26" class="pt"/><path class="pt" d="M20 450q0-75 50-75t50 75z"/></svg></div>
+<div class="scene"><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg"><rect x="120" y="40" width="560" height="330" rx="14" class="s"/><path class="s" d="M360 370v40M280 410h240"/><g class="g"><rect class="bar" x="160" y="200" width="36" height="130" rx="4"/><rect class="bar" style="animation-delay:.4s" x="210" y="160" width="36" height="170" rx="4"/><rect class="bar" style="animation-delay:.8s" x="260" y="230" width="36" height="100" rx="4"/><rect class="bar" style="animation-delay:1.2s" x="310" y="120" width="36" height="210" rx="4"/><rect class="bar" style="animation-delay:1.6s" x="360" y="180" width="36" height="150" rx="4"/></g><path class="s ln" d="M160 290C220 250 260 280 320 190S420 150 450 100"/><circle class="rg" cx="560" cy="150" r="52" fill="none" stroke="var(--gold)" stroke-width="14" stroke-dasharray="210 120"/><path class="s" d="M500 250h140M500 280h100M500 310h120"/><circle cx="70" cy="330" r="26" class="pt"/><path class="pt" d="M20 450q0-75 50-75t50 75z"/></svg></div>
+<div class="scene"><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg"><g transform="translate(130,330)"><g class="fl"><rect x="-34" y="-24" width="68" height="48" rx="12" class="s"/><polygon points="-8,-12 -8,12 14,0" class="g"/></g></g><g transform="translate(330,300)"><g class="fl" style="animation-delay:1s"><path class="g" d="M0 -4C-8 -22-34 -14-22 6C-14 18-4 24 0 28C4 24 14 18 22 6C34 -14 8 -22 0 -4Z"/></g></g><g transform="translate(560,320)"><g class="fl" style="animation-delay:2s"><rect x="-30" y="-22" width="60" height="38" rx="10" class="s"/><path class="s" d="M-12 16L-18 30L2 16"/><circle cx="-12" cy="-3" r="3" class="g"/><circle cx="0" cy="-3" r="3" class="g"/><circle cx="12" cy="-3" r="3" class="g"/></g></g><g transform="translate(700,260)"><g class="fl" style="animation-delay:3s"><circle cx="-18" r="5" class="g"/><circle cx="16" cy="-16" r="5" class="g"/><circle cx="16" cy="16" r="5" class="g"/><path class="s" d="M-18 0L16 -16M-18 0L16 16"/></g></g><g transform="translate(220,420)"><g class="fl" style="animation-delay:4s"><rect x="-32" y="-20" width="64" height="44" rx="10" class="s"/><circle r="13" class="s"/><circle cx="22" cy="-10" r="3" class="g"/></g></g><g transform="translate(450,400)"><g class="fl" style="animation-delay:.5s"><rect x="-56" y="-16" width="112" height="32" rx="16" class="g"/><text class="tx" y="5">Subscribe</text></g></g><g transform="translate(640,430)"><g class="fl" style="animation-delay:1.5s"><rect x="-44" y="-16" width="88" height="32" rx="16" class="g"/><text class="tx" y="5">Follow</text></g></g><g transform="translate(120,430)"><g class="fl" style="animation-delay:2.5s"><rect x="-40" y="-16" width="80" height="32" rx="16" class="g"/><text class="tx" y="5">Reels</text></g></g><g transform="translate(380,440)"><g class="fl" style="animation-delay:3.5s"><rect x="-36" y="-16" width="72" height="32" rx="16" class="g"/><text class="tx" y="5">#viral</text></g></g></svg></div>
+</div>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top"><i>G</i><span id="brand">Gavira Labs</span></a>
+  <nav class="links" aria-label="Primary"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#team">Leadership</a><a href="#contact">Contact</a></nav>
+  <a class="btn" href="#contact">Book a Consultation</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <h1>Content that moves audiences and markets.</h1>
+  <p>A full-service creative and digital growth agency. We produce, edit, write, distribute and market content for brands that expect measurable results.</p>
+  <div class="row"><a class="btn" href="#work">View Our Work</a><a class="btn ghost" href="#services">Our Capabilities</a></div>
+</div></div>
+
+<div class="rail" aria-label="Achievements"><div class="track" id="rail1"></div></div>
+
+<section id="about"><div class="wrap">
+  <h2 class="reveal">A trusted creative partner, at scale.</h2>
+  <p class="lead reveal">Our multidisciplinary team delivers end-to-end content solutions, from concept and production to publishing and performance reporting.</p>
+  <div class="stats reveal" id="stats"></div>
+</div></section>
+
+<section id="services" style="padding-top:20px"><div class="wrap">
+  <h2 class="reveal">Integrated services, one accountable team.</h2>
+  <p class="lead reveal">Every engagement is led by a dedicated specialist and managed to clear timelines and quality standards.</p>
+  <div class="grid" id="services-grid"></div>
+</div></section>
+
+<div class="rail rev" aria-hidden="true"><div class="track" id="rail2"></div></div>
+
+<section id="work"><div class="wrap">
+  <h2 class="reveal">Selected productions and campaigns.</h2>
+  <p class="lead reveal">A sample of recent engagements. Select any project to watch the full piece.</p>
+  <div class="work" id="work-grid"></div>
+</div></section>
+
+<section id="team" style="padding-top:20px"><div class="wrap">
+  <h2 class="reveal">Leadership and specialist team.</h2>
+  <p class="lead reveal">Senior professionals with deep expertise in their disciplines.</p>
+  <div class="team" id="team-grid"></div>
+</div></section>
+
+<div class="contact reveal" id="contact">
+  <div class="wrap" style="padding:0">
+    <h2>Let’s plan your next campaign.</h2>
+    <p>Tell us about your brand and objectives. A senior member of our team will respond within one business day.</p>
+    <div class="cl" id="contact-links"></div>
+  </div>
+</div>
+</main>
+<footer><div class="wrap">© <span id="yr">2026</span> <span id="brand2">Gavira Labs</span>. All rights reserved.</div></footer>
+
+<script>
+/* ===== EDIT YOUR DETAILS HERE ===== */
+var CONFIG = {
+  name: "Gavira Labs",
+  stats: [
+    { n: 25,   suffix: "+", label: "Creative professionals" },
+    { n: 120,  suffix: "+", label: "Clients served" },
+    { n: 450,  suffix: "+", label: "Projects delivered" },
+    { n: 1200, suffix: "+", label: "Videos produced" }
+  ],
+  achievements: [
+    "Trusted by 120+ brands worldwide", "Over 1,200 videos produced", "25 specialists across 6 disciplines",
+    "450+ campaigns delivered", "Featured in industry publications", "Over 50 million cumulative views",
+    "98% client retention rate"
+  ],
+  services: [
+    ["Post-Production &amp; Editorial Services", "Professional video editing, colour grading, sound design and final mastering for every platform."],
+    ["Multi-Channel Content Distribution", "Strategic publishing and scheduling across social, web and partner channels to maximise reach."],
+    ["Strategic Copywriting &amp; Editorial", "Brand-aligned articles, scripts, web copy and long-form editorial that earn attention and trust."],
+    ["Performance &amp; Digital Marketing", "Search, social advertising and analytics-led campaigns built around measurable growth."],
+    ["Cinematic Video Production", "Concept, scripting, filming and direction of commercials, documentaries and brand films."],
+    ["Social Media Management", "Community growth, content calendars and reputation management handled end to end."],
+    ["Brand Strategy &amp; Identity", "Positioning, messaging frameworks and visual identity that set you apart."],
+    ["Motion Graphics &amp; Animation", "2D and 3D animated explainers, titles and visual effects with a premium finish."]
+  ],
+  projects: [
+    ["Brand Launch Film", "Cinematic Video Production", "https://youtube.com/", "#14213a,#9a7424"],
+    ["Growth Campaign Series", "Performance &amp; Digital Marketing", "https://youtube.com/", "#3a1f2b,#c98a4b"],
+    ["Founder Story Documentary", "Post-Production &amp; Editorial", "https://youtube.com/", "#12363a,#6fa39b"],
+    ["Product Explainer Animation", "Motion Graphics &amp; Animation", "https://youtube.com/", "#2a2352,#8d7be0"],
+    ["Social Content Programme", "Multi-Channel Distribution", "https://youtube.com/", "#40210f,#d6975a"],
+    ["Thought Leadership Series", "Strategic Copywriting", "https://youtube.com/", "#1b2f1f,#8fb572"]
+  ],
+  team: [
+    ["Founder &amp; Chief Executive Officer", "Your Name", "#14213a,#9a7424"],
+    ["Creative Director", "Team Member", "#3a1f2b,#c98a4b"],
+    ["Head of Video Production", "Team Member", "#12363a,#6fa39b"],
+    ["Director of Digital Marketing", "Team Member", "#2a2352,#8d7be0"],
+    ["Senior Content Strategist", "Team Member", "#40210f,#d6975a"],
+    ["Lead Post-Production Editor", "Team Member", "#1b2f1f,#8fb572"]
+  ],
+  contact: [
+    ["Email Us", "https://mail.google.com/mail/?view=cm&fs=1&to=behardik@gmail.com&su=Enquiry%20for%20Gavira%20Labs", true],
+    ["Call Us", "tel:+918369188343", false],
+    ["Instagram: @gaviralabs", "https://www.instagram.com/gaviralabs/?utm_source=ig_web_button_share_sheet", false]
+  ]
+};
+/* ===== RENDERING (no need to edit below) ===== */
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function grad(c) { var p = c.split(","); return "linear-gradient(135deg," + p[0] + "," + p[1] + ")"; }
+  function fmt(n) { return n.toLocaleString("en-US"); }
+  try {
+    document.body.classList.remove("no-js");
+    $("brand").textContent = CONFIG.name; $("brand2").textContent = CONFIG.name;
+    $("yr").textContent = new Date().getFullYear();
+
+    var items = CONFIG.achievements.map(function (a) { return "<span>" + a + "</span>"; }).join("");
+    $("rail1").innerHTML = items + items;
+    var items2 = CONFIG.achievements.slice().reverse().map(function (a) { return "<span>" + a + "</span>"; }).join("");
+    $("rail2").innerHTML = items2 + items2;
+
+    $("stats").innerHTML = CONFIG.stats.map(function (s, i) {
+      return '<div class="stat"><b data-n="' + s.n + '" data-s="' + s.suffix + '">' + fmt(s.n) + s.suffix + '</b><small>' + s.label + '</small></div>';
+    }).join("");
+
+    $("services-grid").innerHTML = CONFIG.services.map(function (s) {
+      return '<div class="card reveal"><h3>' + s[0] + '</h3><p>' + s[1] + '</p></div>';
+    }).join("");
+
+    $("work-grid").innerHTML = CONFIG.projects.map(function (p) {
+      return '<a class="proj reveal" href="' + p[2] + '" target="_blank" rel="noopener"><div class="thumb" style="background:' + grad(p[3]) + '"><span class="play"></span></div><div class="meta"><h3>' + p[0] + '</h3><p>' + p[1] + '</p></div></a>';
+    }).join("");
+
+    $("team-grid").innerHTML = CONFIG.team.map(function (t) {
+      var ini = t[1].split(" ").map(function (w) { return w.charAt(0); }).join("").slice(0, 2).toUpperCase();
+      return '<div class="person reveal" style="border-top:2px solid var(--gold);padding-top:16px"><h3>' + t[1] + '</h3><p>' + t[0] + '</p></div>';
+    }).join("");
+
+    $("contact-links").innerHTML = CONFIG.contact.map(function (c) {
+      var ext = c[1].indexOf("http") === 0 ? ' target="_blank" rel="noopener"' : "";
+      return '<a class="btn' + (c[2] ? "" : " ghost") + '" href="' + c[1] + '"' + ext + '>' + c[0] + '</a>';
+    }).join("");
+
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !reduce) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      reveals.forEach(function (r) { io.observe(r); });
+
+      var counted = false;
+      var so = new IntersectionObserver(function (es) {
+        if (counted || !es[0].isIntersecting) return;
+        counted = true;
+        document.querySelectorAll(".stat b").forEach(function (el) {
+          var n = +el.getAttribute("data-n"), s = el.getAttribute("data-s"), t0 = null;
+          function step(t) {
+            if (t0 === null) t0 = t;
+            var k = Math.min((t - t0) / 1600, 1), e = 1 - Math.pow(1 - k, 3);
+            el.textContent = fmt(Math.round(n * e)) + s;
+            if (k < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      }, { threshold: 0.4 });
+      so.observe($("stats"));
+    } else {
+      reveals.forEach(function (r) { r.classList.add("in"); });
+    }
+  } catch (err) {
+    document.querySelectorAll(".reveal").forEach(function (r) { r.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>
